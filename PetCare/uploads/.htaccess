@@ -1,0 +1,15 @@
+# Allow access to uploaded files
+Options -Indexes
+Allow from all
+
+# Security headers
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Allow only image files
+<FilesMatch "\.(jpg|jpeg|png|gif|bmp|webp)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
